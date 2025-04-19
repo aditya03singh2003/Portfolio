@@ -4,7 +4,7 @@ import type React from "react"
 
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
-import { Github, Linkedin, Mail, Phone, FileText, ChevronDown, ChevronUp } from "lucide-react"
+import { Github, Linkedin, Mail, Phone, FileText, ChevronDown, ChevronUp, Trophy, Code, Award } from "lucide-react"
 import Navbar from "@/components/navbar"
 import SocialIcon from "@/components/social-icon"
 import Loading from "@/components/loading"
@@ -12,7 +12,6 @@ import ParticleBackground from "@/components/particle-background"
 import SkillSection from "@/components/skill-section"
 import ProjectCard from "@/components/project-card"
 import AchievementCard from "@/components/achievement-card"
-import Image from "next/image"
 
 export default function Home() {
   const [mounted, setMounted] = useState(false)
@@ -50,15 +49,31 @@ export default function Home() {
     setFormStatus("submitting")
 
     try {
-      // Simulate form submission
-      await new Promise((resolve) => setTimeout(resolve, 1500))
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "ac1388f8-5f00-4908-900a-d2041e4850b4",
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          subject: "New message from portfolio website",
+        }),
+      })
 
-      // In a real application, you would send the data to a server
-      console.log("Form submitted:", formData)
+      const result = await response.json()
 
-      // Reset form
-      setFormData({ name: "", email: "", message: "" })
-      setFormStatus("success")
+      if (result.success) {
+        // Reset form
+        setFormData({ name: "", email: "", message: "" })
+        setFormStatus("success")
+      } else {
+        console.error("Error submitting form:", result)
+        setFormStatus("error")
+      }
 
       // Reset status after 3 seconds
       setTimeout(() => setFormStatus("idle"), 3000)
@@ -100,10 +115,10 @@ export default function Home() {
         "A full-featured web application for managing educational coaching operations, used by 50+ active users.",
       technologies: ["Next.js", "React", "MongoDB", "Tailwind CSS", "NextAuth.js", "TypeScript", "Shadcn/UI"],
       features: [
-        "Developed a role-based dashboard system for admins, teachers, students, and parents.",
-        "Implemented real-time attendance tracking with automated email notifications.",
-        "Integrated secure payment tracking and academic scheduling modules.",
-        "Optimized MongoDB queries, improving performance by 40%; ensured responsive, accessible UI design.",
+        "👥 Developed a role-based dashboard system for admins, teachers, students, and parents.",
+        "⏰ Implemented real-time attendance tracking with automated email notifications.",
+        "💰 Integrated secure payment tracking and academic scheduling modules.",
+        "⚡ Optimized MongoDB queries, improving performance by 40%; ensured responsive, accessible UI design.",
       ],
       image: "/images/sankalp.png",
       sourceCode: "https://github.com/aditya03singh2003/Sankalp95",
@@ -114,13 +129,15 @@ export default function Home() {
         "Advanced browser-based code editor with real-time collaboration, theming, and Pro-tier monetization features.",
       technologies: ["Next.js 15", "Convex", "Clerk", "Tailwind CSS", "LemonSqueezy"],
       features: [
-        "Built a full-stack multi-language code editor supporting 10+ languages with real-time code execution and theme customization.",
-        "Integrated code sharing, live editing, smart output formatting, and markdown preview to enhance collaboration.",
-        "Implemented real-time synchronization between users using Convex backend, ensuring seamless coding experience.",
-        "Reduced code execution delay by 30% through smart output buffering and optimized runtime handling.",
-        "Launched Pro-tier pricing using LemonSqueezy for gated premium features and simulated revenue generation.",
+        "💻 Built a full-stack multi-language code editor supporting 10+ languages with real-time code execution and theme customization.",
+        "🔄 Integrated code sharing, live editing, smart output formatting, and markdown preview to enhance collaboration.",
+        "⚡ Implemented real-time synchronization between users using Convex backend, ensuring seamless coding experience.",
+        "🚀 Reduced code execution delay by 30% through smart output buffering and optimized runtime handling.",
+        "💰 Launched Pro-tier pricing using LemonSqueezy for gated premium features and simulated revenue generation.",
       ],
       image: "/images/codeforge.png",
+      sourceCode: "https://github.com/aditya03singh2003/CodeForge",
+      liveDemo: "https://code-forge-editor.vercel.app/",
     },
     {
       title: "CaseCobra - A Modern Fullstack E-Commerce Shop for Custom Phone Cases",
@@ -154,17 +171,17 @@ export default function Home() {
       title: "AIR-72 in CodeKaze",
       description:
         "Achieved All India Rank 72 among 1,00,000+ participants in CodeKaze- Sep 2024 organized by Coding Ninjas.",
-      icon: <Image src="/placeholder.svg?height=40&width=40" alt="Award" width={40} height={40} />,
+      icon: <Trophy className="w-8 h-8 text-purple-400" />,
     },
     {
       title: "LeetCode Problem Solver",
       description: "Improved problem-solving skills by solving over 200+ questions on LeetCode.",
-      icon: <Image src="/placeholder.svg?height=40&width=40" alt="Code" width={40} height={40} />,
+      icon: <Code className="w-8 h-8 text-purple-400" />,
     },
     {
       title: "Competitive Programming",
       description: "Solved 500+ questions on various platforms like Codechef, GeeksforGeeks and Coding Ninjas.",
-      icon: <Image src="/placeholder.svg?height=40&width=40" alt="Code" width={40} height={40} />,
+      icon: <Award className="w-8 h-8 text-purple-400" />,
     },
   ]
 
@@ -188,14 +205,31 @@ export default function Home() {
             <h2 className="text-xl md:text-2xl mb-8 text-gray-300">Full-Stack Developer</h2>
             <div className="flex flex-wrap justify-center gap-4">
               <a href="#projects">
-                <button className="bg-gradient-to-r from-purple-600 to-violet-600 hover:from-purple-700 hover:to-violet-700 text-white font-medium py-2 px-6 rounded-md transition-all duration-300 shadow-lg shadow-purple-500/20">
+                <motion.button
+                  whileHover={{
+                    scale: 1.05,
+                    boxShadow: "0 0 20px rgba(168, 85, 247, 0.5)",
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                  className="bg-gradient-to-r from-purple-600 to-violet-600 hover:from-purple-700 hover:to-violet-700 text-white font-medium py-2 px-6 rounded-md transition-all duration-300 shadow-lg shadow-purple-500/20"
+                >
                   View Projects
-                </button>
+                </motion.button>
               </a>
               <a href="#contact">
-                <button className="bg-transparent border-2 border-purple-500 text-white hover:bg-purple-500 hover:text-white transition-all duration-300 font-medium py-2 px-6 rounded-md">
+                <motion.button
+                  whileHover={{
+                    scale: 1.05,
+                    backgroundColor: "rgba(168, 85, 247, 0.2)",
+                    borderColor: "rgb(168, 85, 247)",
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                  className="bg-transparent border-2 border-purple-500 text-white hover:bg-purple-500 hover:text-white transition-all duration-300 font-medium py-2 px-6 rounded-md"
+                >
                   Contact Me
-                </button>
+                </motion.button>
               </a>
             </div>
           </motion.div>
@@ -267,8 +301,15 @@ export default function Home() {
 
               {projects.length > 3 && (
                 <div className="flex justify-center mt-8">
-                  <button
+                  <motion.button
                     onClick={() => setShowAllProjects(!showAllProjects)}
+                    whileHover={{
+                      scale: 1.05,
+                      backgroundColor: "rgba(42, 26, 74, 0.9)",
+                      borderColor: "rgba(168, 85, 247, 0.6)",
+                    }}
+                    whileTap={{ scale: 0.95 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
                     className="flex items-center gap-2 px-6 py-3 bg-[#1a0d33]/70 hover:bg-[#2a1a4a] text-white rounded-md transition-all duration-300 border border-purple-500/30"
                   >
                     {showAllProjects ? (
@@ -282,7 +323,7 @@ export default function Home() {
                         <ChevronDown size={20} />
                       </>
                     )}
-                  </button>
+                  </motion.button>
                 </div>
               )}
             </div>
@@ -330,8 +371,14 @@ export default function Home() {
             <div className="max-w-3xl mx-auto">
               <div className="bg-[#1a0d33]/50 backdrop-blur-sm rounded-xl border border-purple-900/30 p-8 shadow-lg shadow-purple-500/10">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-                  <a
+                  <motion.a
                     href="mailto:aditya03singh2003@gmail.com"
+                    whileHover={{
+                      scale: 1.03,
+                      backgroundColor: "rgba(42, 26, 74, 0.8)",
+                      y: -5,
+                    }}
+                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
                     className="flex items-center p-4 bg-[#2a1a4a]/50 rounded-lg hover:bg-[#2a1a4a] transition-colors"
                   >
                     <Mail className="w-6 h-6 mr-3 text-purple-400" />
@@ -339,9 +386,15 @@ export default function Home() {
                       <h3 className="font-medium">Email</h3>
                       <p className="text-sm text-gray-300">aditya03singh2003@gmail.com</p>
                     </div>
-                  </a>
-                  <a
+                  </motion.a>
+                  <motion.a
                     href="tel:+918707664940"
+                    whileHover={{
+                      scale: 1.03,
+                      backgroundColor: "rgba(42, 26, 74, 0.8)",
+                      y: -5,
+                    }}
+                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
                     className="flex items-center p-4 bg-[#2a1a4a]/50 rounded-lg hover:bg-[#2a1a4a] transition-colors"
                   >
                     <Phone className="w-6 h-6 mr-3 text-purple-400" />
@@ -349,7 +402,7 @@ export default function Home() {
                       <h3 className="font-medium">Phone</h3>
                       <p className="text-sm text-gray-300">+91 8707664940</p>
                     </div>
-                  </a>
+                  </motion.a>
                 </div>
 
                 <form className="space-y-4" onSubmit={handleSubmit}>
@@ -395,9 +448,15 @@ export default function Home() {
                       required
                     ></textarea>
                   </div>
-                  <button
+                  <motion.button
                     type="submit"
                     disabled={formStatus === "submitting"}
+                    whileHover={{
+                      scale: formStatus !== "submitting" ? 1.02 : 1,
+                      boxShadow: "0 0 20px rgba(168, 85, 247, 0.5)",
+                    }}
+                    whileTap={{ scale: formStatus !== "submitting" ? 0.98 : 1 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
                     className="w-full bg-gradient-to-r from-purple-600 to-violet-600 hover:from-purple-700 hover:to-violet-700 text-white font-medium py-3 px-6 rounded-md transition-all duration-300 shadow-lg shadow-purple-500/20 flex justify-center items-center"
                   >
                     {formStatus === "submitting" ? (
@@ -427,7 +486,7 @@ export default function Home() {
                     ) : (
                       "Send Message"
                     )}
-                  </button>
+                  </motion.button>
 
                   {formStatus === "success" && (
                     <div className="mt-4 p-3 bg-green-500/20 border border-green-500/50 rounded-md text-green-200 text-center">

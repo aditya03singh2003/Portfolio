@@ -15,7 +15,11 @@ interface SocialIconProps {
 
 export default function SocialIcon({ icon, href, label, className = "", onClick }: SocialIconProps) {
   return (
-    <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
+    <motion.div
+      whileHover={{ scale: 1.2 }}
+      whileTap={{ scale: 0.9 }}
+      transition={{ type: "spring", stiffness: 400, damping: 10 }}
+    >
       <Link
         href={href}
         aria-label={label}
@@ -24,7 +28,15 @@ export default function SocialIcon({ icon, href, label, className = "", onClick 
         target={href.startsWith("http") ? "_blank" : undefined}
         rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
       >
-        <span className="text-white">{icon}</span>
+        <motion.span
+          className="text-white"
+          whileHover={{
+            rotate: [0, -10, 10, -10, 0],
+            transition: { duration: 0.5 },
+          }}
+        >
+          {icon}
+        </motion.span>
         <span className="sr-only">{label}</span>
       </Link>
     </motion.div>
