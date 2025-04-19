@@ -1,8 +1,8 @@
 # 🚀 Aditya Singh's Developer Portfolio
 
-![🏠 Homepage](public/screenshots/homepage.png)
-![🛠️ Technical Skills](public/screenshots/skills.png)
-![💻 Projects](public/screenshots/projects.png)
+![Homepage](public/screenshots/homepage.png)
+![🛠Technical Skills](public/screenshots/skills.png)
+![Projects](public/screenshots/projects.png)
 ![👋 GetInTouch](public/screenshots/getintouch.png)
 
 Welcome to my interactive developer portfolio built with cutting-edge web technologies. This site showcases my skills through immersive 3D elements and smooth animations.
