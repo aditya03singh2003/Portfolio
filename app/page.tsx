@@ -88,7 +88,7 @@ export default function Home() {
 
   const projects = [
     {
-      title: "CodeSync – Remote Technical Interview Platform",
+      title: "CodeSync – Video Calling Interview Platform",
       description:
         "A fully-featured web platform designed to streamline remote technical interviews with live collaboration tools.",
       technologies: ["Next.js 14", "TypeScript", "Stream", "Convex", "Clerk", "Tailwind CSS", "Shadcn/UI"],
@@ -158,7 +158,7 @@ export default function Home() {
         "✅ Apple-inspired configuration design",
         "⌨️ 100% written in TypeScript",
       ],
-      image: "/images/casecobra.png",
+      image: "/images/casecobre3.png",
       sourceCode: "https://github.com/aditya03singh2003/CaseCobra",
       liveDemo: "https://case-cobra.vercel.app/",
     },
@@ -175,7 +175,7 @@ export default function Home() {
     },
     {
       title: "LeetCode Problem Solver",
-      description: "Improved problem-solving skills by solving over 200+ questions on LeetCode.",
+      description: "Improved problem-solving skills by solving over 250+ questions on LeetCode.",
       icon: <Code className="w-8 h-8 text-purple-400" />,
     },
     {

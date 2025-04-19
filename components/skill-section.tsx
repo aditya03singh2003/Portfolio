@@ -23,7 +23,7 @@ export default function SkillSection() {
         { name: "React.js", icon: "/icons/reactjs.svg" },
         { name: "Next.js", icon: "/icons/nextjs.svg" },
         { name: "Tailwind", icon: "/icons/tailwind.svg" },
-        { name: "Angular", icon: "/placeholder.svg?height=40&width=40" },
+        { name: "Angular", icon: "/icons/angular-icon.svg" },
       ],
     },
     {
@@ -45,7 +45,7 @@ export default function SkillSection() {
         { name: "Python", icon: "/icons/python.svg" },
         { name: "C++", icon: "/icons/cpp.svg" },
         { name: "Java", icon: "/icons/java.svg" },
-        { name: "C", icon: "/placeholder.svg?height=40&width=40" },
+        { name: "C", icon: "/icons/c.svg" },
       ],
     },
     {
@@ -55,8 +55,8 @@ export default function SkillSection() {
         { name: "GitHub", icon: "/placeholder.svg?height=40&width=40" },
         { name: "VS Code", icon: "/icons/vscode.svg" },
         { name: "NPM", icon: "/icons/npm.svg" },
-        { name: "Postman", icon: "/placeholder.svg?height=40&width=40" },
-        { name: "Vite.js", icon: "/placeholder.svg?height=40&width=40" },
+        { name: "Postman", icon: "/icons/postman.svg" },
+        { name: "Vite.js", icon: "/icons/vitejs.svg" },
       ],
     },
   ]
