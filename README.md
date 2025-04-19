@@ -1,5 +1,5 @@
 # 🚀 Aditya Singh's Developer Portfolio
-
+A dynamic developer portfolio showcasing cutting-edge web development with Next.js 15, Three.js, and Tailwind CSS. Features immersive 3D animations, particle effects, and responsive UI components. Implements modern practices like server components, lazy loading, and dark mode. Demonstrates full-stack capabilities through project case studies and optimized performance. 
 
 ## 🌐 Live Demo
 🔗 **Live Website:** [https://portfolio-silk-six-38.vercel.app/](https://portfolio-silk-six-38.vercel.app/)
