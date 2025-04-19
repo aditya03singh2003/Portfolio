@@ -122,6 +122,7 @@ export default function Home() {
       ],
       image: "/images/sankalp.png",
       sourceCode: "https://github.com/aditya03singh2003/Sankalp95",
+      liveDemo: "https://sankalp95.vercel.app",
     },
     {
       title: "Code Forge – Multi-language Online Code Editor",

@@ -52,7 +52,7 @@ export default function SkillSection() {
       title: "Tech & Tools",
       skills: [
         { name: "Git", icon: "/icons/git.svg" },
-        { name: "GitHub", icon: "/placeholder.svg?height=40&width=40" },
+        { name: "GitHub", icon: "/icons/github.svg" },
         { name: "VS Code", icon: "/icons/vscode.svg" },
         { name: "NPM", icon: "/icons/npm.svg" },
         { name: "Postman", icon: "/icons/postman.svg" },
