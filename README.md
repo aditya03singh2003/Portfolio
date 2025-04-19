@@ -1,10 +1,18 @@
 # 🚀 Aditya Singh's Developer Portfolio
+
+## 🔥 Preview
+
+
+
 ### 🏠 Home Page
 ![Homepage](public/screenshots/homepage.png)
+
 ### 🛠 Technical Skills
 ![Technical Skills](public/screenshots/skills.png)
+
 ### 💻 Projects
 ![Projects](public/screenshots/projects.png)
+
 ### 👋 Get In Touch
 ![GetInTouch](public/screenshots/getintouch.png)
 
