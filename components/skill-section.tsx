@@ -35,6 +35,7 @@ export default function SkillSection() {
         { name: "MySQL", icon: "/icons/mysql.svg" },
         { name: "REST API", icon: "/icons/database.svg" },
         { name: "Firebase", icon: "/icons/firebase.svg" },
+        { name: "Next-Auth", icon: "/icons/nextauth.svg" },
       ],
     },
     {
@@ -57,6 +58,7 @@ export default function SkillSection() {
         { name: "NPM", icon: "/icons/npm.svg" },
         { name: "Postman", icon: "/icons/postman.svg" },
         { name: "Vite.js", icon: "/icons/vitejs.svg" },
+        {name: "Vercel.js", icon: "/icons/vercel.svg" },
       ],
     },
   ]
