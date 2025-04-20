@@ -163,6 +163,27 @@ export default function Home() {
       sourceCode: "https://github.com/aditya03singh2003/CaseCobra",
       liveDemo: "https://case-cobra.vercel.app/",
     },
+    {
+      title: "Netflix Clone 🎬 - Fullstack Streaming Web App",
+      description:
+        "A complete Netflix-inspired fullstack application built with MERN stack and Tailwind CSS. Includes user authentication, movie search, trailers, and more.",
+      technologies: ["React.js", "Node.js", "Express.js", "MongoDB", "Tailwind CSS", "JWT"],
+      features: [
+        "🔐 JWT Authentication for secure login/signup",
+        "📱 Fully responsive design for all devices",
+        "🎬 Fetch movies and TV shows from TMDB API",
+        "🔍 Search for actors and movie titles",
+        "🎥 Watch official trailers directly in the app",
+        "🕵️ Get recommendations for similar movies/TV shows",
+        "🕑 Track and display user search history",
+        "💙 Beautiful and modern landing page design",
+        "🌐 Deployed and accessible online",
+      ],
+      image: "/images/netflix-clone.png",
+      sourceCode: "https://github.com/aditya03singh2003/Netflix-Clone",
+      liveDemo: "https://netflix-clone-goks.onrender.com",
+    },
+    
   ]
 
   const visibleProjects = showAllProjects ? projects : projects.slice(0, 3)
