@@ -1,4 +1,8 @@
 # 🚀 Aditya Singh's Developer Portfolio
+## 🌐 Live Demo
+🔗 **Live Website:** [https://portfolio-silk-six-38.vercel.app/](https://portfolio-silk-six-38.vercel.app/)
+
+## 📖 Preview
 
 ![🏠 Homepage](public/screenshots/homepage.png)
 ![🛠️ Technical Skills](public/screenshots/skills.png)
@@ -7,8 +11,6 @@
 
 Welcome to my interactive developer portfolio built with cutting-edge web technologies. This site showcases my skills through immersive 3D elements and smooth animations.
 
-## 🌐 Live Demo
-🔗 **Live Website:** [https://portfolio-silk-six-38.vercel.app/](https://portfolio-silk-six-38.vercel.app/)
 
 ## 🛠️ Tech Stack
 ### 🧩 Core Technologies
